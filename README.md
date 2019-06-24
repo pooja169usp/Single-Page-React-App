@@ -42,6 +42,7 @@ After the data is loaded successfully, UsersTable renders a table with details o
 <img src="public/images/UsersTable.png" alt="User Table Loaded" />
 
 It has following states:
+###
     *sortAscending* default set to false, denotes the current sorting order
     *buttonText* deafult set to "A" denoting Ascending order
 Initializing state to false, because on render the table data is already sorted in ascending order
