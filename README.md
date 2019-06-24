@@ -4,9 +4,9 @@ To run this application, simply follow the steps below:
 1. Download/clone the git repository https://github.com/pooja169usp/Single-Page-React-App
 2. Extract the zip file and navigate to the extracted location/project folder in the terminal.
 3. Run the following commands:
-> npm install
+> npm install - To install node dependencies and libraries referenced by this project
 ####
-> npm start
+> npm start - To launch the application in a browser
 ####
 > npm test - For running basic test cases to make sure all the components are rendered without crashing
 
