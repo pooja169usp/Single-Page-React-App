@@ -7,6 +7,8 @@ To run this application, simply follow the steps below:
 > npm install
 ####
 > npm start
+####
+> npm test - For running basic test cases to make sure all the components are rendered without crashing
 
 ##
 
