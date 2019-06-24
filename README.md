@@ -17,7 +17,18 @@ Functional component that renders Header. It has the Get Users button which on c
 Functional component that renders Footer. It has a link Visit Carbonite! that opens up a new tab
 
 ### UsersTable
-UsersTable is a class component. On load of the web page and before the Get Users button is clicked, UsersTable component renders renders a user friendly text saying the data has not been loaded. On click of Get Users, while fetching the data from API(determined by property isLoading, this component renders a loading gif to indicate to the users that the data is being fetched. After the data is loaded successfully, UsersTable renders a table with details of users on click of Get Users button in Header Component(which is determined by the property showUsers that is passed from WebPage).
+UsersTable is a class component. On load of the web page and before the Get Users button is clicked, UsersTable component renders renders a user friendly text saying the data has not been loaded. 
+
+<img src="public/images/OnLoad.png" alt="Loading Users" />
+
+On click of Get Users, while fetching the data from API(determined by property isLoading, this component renders a loading gif to indicate to the users that the data is being fetched. 
+
+<img src="public/images/LoadingUsers.png" alt="Loading Users" />
+
+After the data is loaded successfully, UsersTable renders a table with details of users on click of Get Users button in Header Component(which is determined by the property showUsers that is passed from WebPage).
+
+<img src="public/images/UsersTable.png" alt="Loading Users" />
+
 It has following states:
     *sortAscending* default set to false, denotes the current sorting order
     *buttonText* deafult set to "A" denoting Ascending order
@@ -30,12 +41,6 @@ Initializing state to false, because on render the table data is already sorted 
 
 ### UserRow
 Functional component to render the rows in the Users table with the data passed in by UsersTable as props.user
-
-
-<img src="public/images/LoadingUsers.png" alt="Loading Users" />
-<img src="public/images/OnLoad.png" alt="Loading Users" />
-<img src="public/images/UsersTable.png" alt="Loading Users" />
-
 
 
 ##
