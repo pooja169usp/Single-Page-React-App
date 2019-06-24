@@ -16,11 +16,11 @@ In this project, WebPage is the parent component that holds all the other compon
 A class component that fetches data from API on click of Get Users button and passes the data onto Userstable for rendering.
 It has following states:
 ###
-    *hasErrors* is set if an error occurs while fetching data    
-    *showUsers* is set on successful data fetch
-    *isLoading* is set when the data fetch is initiated and reset on successful data fetch
-    *usersData* holds the response from the fetch API
-    *parsedUsersData* holds the passed information from usersData 
+*hasErrors* is set if an error occurs while fetching data    
+*showUsers* is set on successful data fetch
+*isLoading* is set when the data fetch is initiated and reset on successful data fetch
+*usersData* holds the response from the fetch API
+*parsedUsersData* holds the passed information from usersData 
  
 ### Header
 Functional component that renders Header. It has the Get Users button which on click fetches the users by making a get request using fetch API
@@ -43,8 +43,8 @@ After the data is loaded successfully, UsersTable renders a table with details o
 
 It has following states:
 ###
-    *sortAscending* default set to false, denotes the current sorting order
-    *buttonText* deafult set to "A" denoting Ascending order
+*sortAscending* default set to false, denotes the current sorting order
+*buttonText* deafult set to "A" denoting Ascending order
 Initializing state to false, because on render the table data is already sorted in ascending order
 
 ##### Helper functions
