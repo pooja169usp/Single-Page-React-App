@@ -5,6 +5,7 @@ To run this application, simply follow the steps below:
 2. Extract the zip file and navigate to the extracted location/project folder in the terminal.
 3. Run the following commands:
 > npm install
+####
 > npm start
 
 ##
