@@ -44,6 +44,7 @@ class WebPage extends Component {
     // the user table with the data loaded
     getUsers = () => {
         this.setState({ isLoading: true });
+        // Adding 1 second delay to show rendering of the loading stage
         setTimeout(()=> {
             fetch("https://jsonplaceholder.typicode.com/users", { method: "GET" })
             .then(res => res.json())
