@@ -30,7 +30,7 @@ Functional component that renders Footer. It has a link Visit Carbonite! that op
 ### UsersTable
 UsersTable is a class component. On load of the web page and before the Get Users button is clicked, UsersTable component renders renders a user friendly text saying the data has not been loaded. 
 
-<img src="public/images/OnLoad.png" alt="Loading Users" />
+<img src="public/images/OnLoad.png" alt="On Page Load" />
 
 On click of Get Users, while fetching the data from API(determined by property isLoading, this component renders a loading gif to indicate to the users that the data is being fetched. 
 
@@ -38,7 +38,7 @@ On click of Get Users, while fetching the data from API(determined by property i
 
 After the data is loaded successfully, UsersTable renders a table with details of users on click of Get Users button in Header Component(which is determined by the property showUsers that is passed from WebPage).
 
-<img src="public/images/UsersTable.png" alt="Loading Users" />
+<img src="public/images/UsersTable.png" alt="User Table Loaded" />
 
 It has following states:
     *sortAscending* default set to false, denotes the current sorting order
