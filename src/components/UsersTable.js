@@ -6,7 +6,7 @@ import UserRow from "./UserRow";
  * in Header Component(which is determined by the property showUsers that is passed from WebPage). 
  * While fetching the data from API(determined by property isLoading), this component renders a 
  * loading gif to indicate to the users that the data is being fetched. Before the Get Users 
- * button is clicked, this component renders an empty div tag.
+ * button is clicked, this component renders a user friendly text saying the data has not been loaded.
  */
 class UsersTable extends React.Component {
     // Initializing state to false, because on render the table data is already
@@ -41,7 +41,7 @@ class UsersTable extends React.Component {
 
     // Helper function to sort the data in either ascending/descending order.
     // Each time the Sort button is clicked, the sortAscending and buttonText states
-    // are toggled.
+    // are toggled. Ref: W3 Schools for sorting
     sortTable = () => {
         let table, userRows, userRowsLength, swapping, i, x, y, shouldSwap;
         table = document.getElementById("userTable");

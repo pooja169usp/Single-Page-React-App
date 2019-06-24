@@ -45,7 +45,7 @@ class WebPage extends Component {
     getUsers = () => {
         this.setState({ isLoading: true });
         setTimeout(()=> {
-            fetch("https://jsonplaceholder.typicode.com/users")
+            fetch("https://jsonplaceholder.typicode.com/users", { method: "GET" })
             .then(res => res.json())
             .then(res => this.setState({ usersData: res, parsedUsersData: this.parseUserData(res) }))
             .then(this.setState({ showUsers: true, isLoading: false }))
