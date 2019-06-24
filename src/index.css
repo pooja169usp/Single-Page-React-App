@@ -114,7 +114,7 @@ table th {
   color: white;
 }
 
-#loading {
+.loading {
   margin: 10% auto;
   text-align: center;
 }

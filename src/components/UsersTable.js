@@ -101,7 +101,7 @@ class UsersTable extends React.Component {
         });
 
         if(this.props.isLoading && !this.props.showUsers) {
-            return (<div id="loading"><img src="/images/loading.gif" alt="Loading Users..."></img></div>);
+            return (<div className="loading"><img src="/images/loading.gif" alt="Loading Users..."></img></div>);
         }
         else if(this.props.showUsers) {
             return (
@@ -133,7 +133,7 @@ class UsersTable extends React.Component {
             );
         }
         else {
-            return (<div></div>);
+            return (<div className="loading">Users Data has not been loaded.<br />Click Get Users to fetch Data.</div>);
         }
     }
 }
