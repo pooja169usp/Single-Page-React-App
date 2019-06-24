@@ -15,10 +15,15 @@ In this project, WebPage is the parent component that holds all the other compon
 ### WebPage
 A class component that fetches data from API on click of Get Users button and passes the data onto Userstable for rendering.
 It has following states:
+###
     *hasErrors* is set if an error occurs while fetching data
+###    
     *showUsers* is set on successful data fetch
+###
     *isLoading* is set when the data fetch is initiated and reset on successful data fetch
+###
     *usersData* holds the response from the fetch API
+###
     *parsedUsersData* holds the passed information from usersData 
  
 ### Header
