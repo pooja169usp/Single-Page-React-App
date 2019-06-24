@@ -1,5 +1,15 @@
 # SINGLE PAGE REACT APPLICATION
- In this project, WebPage is the parent component that holds all the other components including the Header, Footer, UsersTable and UserRow
+
+To run this application, simply follow the steps below:
+1. Download/clone the git repository https://github.com/pooja169usp/Single-Page-React-App
+2. Extract the zip file and navigate to the extracted location/project folder in the terminal.
+3. Run the following commands:
+> npm install
+> npm start
+
+##
+
+In this project, WebPage is the parent component that holds all the other components including the Header, Footer, UsersTable and UserRow
 
 ### WebPage
 A class component that fetches data from API on click of Get Users button and passes the data onto Userstable for rendering.
