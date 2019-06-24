@@ -23,10 +23,10 @@ It has following states:
     *buttonText* deafult set to "A" denoting Ascending order
 Initializing state to false, because on render the table data is already sorted in ascending order
 
-> Helper functions
-    *sortTable* sorts the data in either ascending/descending order. Each time the Sort button is clicked, the sortAscending and buttonText states are toggled. Ref: W3 Schools for sorting
+##### Helper functions
+> *sortTable* sorts the data in either ascending/descending order. Each time the Sort button is clicked, the sortAscending and buttonText states are toggled. Ref: W3 Schools for sorting
 
-    *filterTable* filters the data based on the filter text entered in the input text box. The data is filtered by setting the display property to none for the rows that do not match with the filter text entered
+> *filterTable* filters the data based on the filter text entered in the input text box. The data is filtered by setting the display property to none for the rows that do not match with the filter text entered
 
 ### UserRow
 Functional component to render the rows in the Users table with the data passed in by UsersTable as props.user
@@ -36,7 +36,8 @@ Functional component to render the rows in the Users table with the data passed 
 
 
 
-### 
+##
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
