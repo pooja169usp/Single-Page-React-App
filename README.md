@@ -32,7 +32,9 @@ Initializing state to false, because on render the table data is already sorted 
 Functional component to render the rows in the Users table with the data passed in by UsersTable as props.user
 
 
-
+<img src="/images/LoadingUsers.png" alt="Loading Users" />
+<img src="/images/OnLoad.png" alt="Loading Users" />
+<img src="/images/UsersTable.png" alt="Loading Users" />
 
 
 
