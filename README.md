@@ -19,7 +19,7 @@ It has following states:
     *showUsers* is set on successful data fetch
     *isLoading* is set when the data fetch is initiated and reset on successful data fetch
     *usersData* holds the response from the fetch API
-    *parsedUsersData* hold the paserd information from usersData 
+    *parsedUsersData* holds the passed information from usersData 
  
 ### Header
 Functional component that renders Header. It has the Get Users button which on click fetches the users by making a get request using fetch API
