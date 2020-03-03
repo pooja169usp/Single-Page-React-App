@@ -46,11 +46,10 @@ class WebPage extends Component {
         this.setState({ isLoading: true });
         // Adding 1 second delay to show rendering of the loading stage
         setTimeout(()=> {
-            fetch("https://jsonplaceholder.typicode.com/users", { method: "GET" })
-            .then(res => res.json())
-            .then(res => this.setState({ usersData: res, parsedUsersData: this.parseUserData(res) }))
-            .then(this.setState({ showUsers: true, isLoading: false }))
-            .catch(() => this.setState({ hasErrors: true }));
+            this.setState({ 
+                showUsers: true, 
+                isLoading: false
+            });
         }, 1000);
     }
 
@@ -61,7 +60,7 @@ class WebPage extends Component {
                 <Footer />
                 <UsersTable isLoading={ this.state.isLoading } 
                     showUsers={ this.state.showUsers } 
-                    parsedUsersData={ this.state.parsedUsersData } 
+                    parseUserData={ this.parseUserData } 
                 />
             </div>
         );

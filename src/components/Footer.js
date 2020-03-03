@@ -5,6 +5,6 @@ import React from "react";
  */
 export default (props) => (
    <footer>
-        <a href="https://www.carbonite.com/" target="_blank" rel="noopener noreferrer">Visit Carbonite!</a>
+        <a href="https://www.linkedin.com/in/pooja-guggari" target="_blank" rel="noopener noreferrer">Let's Connect!</a>
    </footer>
 );

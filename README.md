@@ -28,7 +28,7 @@ It has following states:
 Functional component that renders Header. It has the Get Users button which on click fetches the users by making a get request using fetch API
 
 ### Footer
-Functional component that renders Footer. It has a link Visit Carbonite! that opens up a new tab
+Functional component that renders Footer. It has a link "Let's Connect!" that opens up a new tab to my linkedIn page
 
 ### UsersTable
 UsersTable is a class component. On load of the web page and before the Get Users button is clicked, UsersTable component renders renders a user friendly text saying the data has not been loaded. 

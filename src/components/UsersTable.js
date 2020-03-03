@@ -12,9 +12,13 @@ class UsersTable extends React.Component {
     // Initializing state to false, because on render the table data is already
     // sorted in ascending order and the button text says "A" to denote that the 
     // data is sorted in ascending order of Company Names
-    state = {
-        sortAscending: false,
-        buttonText: "A"
+    constructor(props) {
+        super(props);
+        this.state = {
+            sortAscending: true,
+            buttonText: "A",
+            userRows: []
+        }
     }
 
     // Helper function to filter the data based on the filter text entered in the input
@@ -39,66 +43,53 @@ class UsersTable extends React.Component {
         }
     }
 
+    componentDidMount() {
+        fetch("https://jsonplaceholder.typicode.com/users", { method: "GET" })
+        .then(res => res.json())
+        .then(res => this.setState({ 
+            userRows: this.props.parseUserData(res)
+        })).then( this.sortTable )
+        .catch(() => this.setState({ hasErrors: true }));
+    }
+
     // Helper function to sort the data in either ascending/descending order.
     // Each time the Sort button is clicked, the sortAscending and buttonText states
     // are toggled. Ref: W3 Schools for sorting
     sortTable = () => {
-        let table, userRows, userRowsLength, swapping, i, x, y, shouldSwap;
-        table = document.getElementById("userTable");
-        swapping = true;
-        while (swapping) {
-            swapping = false;
-            userRows = table.rows;
-            userRowsLength = userRows.length;
-            // We start looping at index 1, since index 0 is the header row.
-            for (i = 1; i < userRowsLength - 1; i++) {
-                shouldSwap = false;
-                // Here we compare the companyName in current row with the 
-                // companyName in the succeeding row and determine if it needs 
-                // to be swapped based on the sortAscending state.
-                x = userRows[i].getElementsByTagName("td")[0];
-                y = userRows[i + 1].getElementsByTagName("td")[0];
-                // To sort the rows in ascending order
-                if (this.state.sortAscending === true) {
-                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                        shouldSwap = true;
-                        break;
-                    }
-                }
-                // To sort the rows in descending order 
-                else if (this.state.sortAscending === false) {
-                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-                        shouldSwap = true;
-                        break;
-                    }
-                }
-            }
-            // Swap the rows if we determine in the previous step that the rows need to be swapped
-            if (shouldSwap) {
-                userRows[i].parentNode.insertBefore(userRows[i + 1], userRows[i]);
-                swapping = true;     
-            } 
+        var list = this.state.userRows;
+        if(this.state.sortAscending) {
+            list.sort(function(a,b){
+                if(a.companyName < b.companyName)
+                    return -1;
+                else if(a.companyName > b.companyName)
+                    return 1;
+                else
+                    return 0;
+            });
+            console.log("HMMMM");
+            console.log("HERE" + JSON.stringify(this.state.userRows, null, 2));
+        }
+        else {
+            list.sort(function(a,b){
+                if(a.companyName < b.companyName)
+                    return 1;
+                else if(a.companyName > b.companyName)
+                    return -1;
+                else
+                    return 0;
+            }); 
+            console.log("HUH");
         }
         // Toggle the state after the rows have been sorted
-        this.setState({ sortAscending: !this.state.sortAscending });
-        this.state.buttonText === "A" ? this.setState({ buttonText: "D" }) : this.setState({ buttonText: "A" });
+        this.setState({ 
+            sortAscending: !this.state.sortAscending,
+            buttonText: this.state.buttonText === "A" ? "D" : "A",
+            userRows: list
+        });
     }
 
     render() {
-        const rows = [];
-        this.props.parsedUsersData.sort(function(a,b){
-            if(a.companyName < b.companyName)
-                return -1;
-            else if(a.companyName > b.companyName)
-                return 1;
-            else
-                return 0;
-        });
-        this.props.parsedUsersData.forEach((user) => {
-            rows.push(
-                <UserRow user={ user } key={ user.id } />
-            );
-        });
+        console.log(JSON.stringify(this.state.userRows, null, 4));
 
         if(this.props.isLoading && !this.props.showUsers) {
             return (<div className="loading"><img src="/images/loading.gif" alt="Loading Users..."></img></div>);
@@ -127,7 +118,7 @@ class UsersTable extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
-                        { rows }
+                        { this.state.userRows.map((user) => <UserRow user={ user } key={ user.id } />) }
                     </tbody>
                 </table>
             );
