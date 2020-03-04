@@ -44,7 +44,7 @@ It has following states:
 Initializing state to false, because on render the table data is already sorted in ascending order
 
 ##### Helper functions
-> *sortTable* sorts the data in either ascending/descending order. Each time the Sort button is clicked, the sortAscending and buttonText states are toggled. Ref: W3 Schools for sorting
+> *sortTable* sorts the data in either ascending/descending order. Each time the Sort button is clicked, the sortAscending and buttonText states are toggled
 
 > *filterTable* filters the data based on the filter text entered in the input text box. The data is filtered by setting the display property to none for the rows that do not match with the filter text entered
 
